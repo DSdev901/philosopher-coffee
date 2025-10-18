@@ -121,7 +121,7 @@ function App() {
               <Nav.Link href="#philosophy" onClick={scrollToSection('philosophy-section')}>Philosophy</Nav.Link>
               <Nav.Link href="#coffee" onClick={scrollToSection('coffee-section')}>Coffee</Nav.Link>
               <Nav.Link href="#about" onClick={scrollToSection('about-section')}>About</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              {/* <Nav.Link href="#contact">Contact</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
