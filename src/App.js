@@ -108,7 +108,7 @@ function App() {
         className={`${isNavbarOnWhite ? 'navbar-on-white' : ''} ${isScrolled ? 'scrolled' : ''}`}
       >
         <Container>
-          <Navbar.Brand href="#home">{wrapPunctuation("The Philosopher")}</Navbar.Brand>
+          <Navbar.Brand href="#home" onClick={scrollToSection('App-header')}>{wrapPunctuation("The Philosopher")}</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
