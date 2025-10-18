@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/philosopher-coffee/static/css/main.1c02b3fe.css",
-    "main.js": "/philosopher-coffee/static/js/main.4913fda4.js",
+    "main.css": "/philosopher-coffee/static/css/main.b48b6aa7.css",
+    "main.js": "/philosopher-coffee/static/js/main.ababb9ed.js",
     "static/js/453.b2ca8a0e.chunk.js": "/philosopher-coffee/static/js/453.b2ca8a0e.chunk.js",
     "index.html": "/philosopher-coffee/index.html",
-    "main.1c02b3fe.css.map": "/philosopher-coffee/static/css/main.1c02b3fe.css.map",
-    "main.4913fda4.js.map": "/philosopher-coffee/static/js/main.4913fda4.js.map",
+    "main.b48b6aa7.css.map": "/philosopher-coffee/static/css/main.b48b6aa7.css.map",
+    "main.ababb9ed.js.map": "/philosopher-coffee/static/js/main.ababb9ed.js.map",
     "453.b2ca8a0e.chunk.js.map": "/philosopher-coffee/static/js/453.b2ca8a0e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c02b3fe.css",
-    "static/js/main.4913fda4.js"
+    "static/css/main.b48b6aa7.css",
+    "static/js/main.ababb9ed.js"
   ]
 }
