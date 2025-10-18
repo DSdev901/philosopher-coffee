@@ -1,0 +1,341 @@
+body{
+    background-color: rgb(11, 21, 17) !important;
+    scroll-behavior: smooth;
+    cursor: default !important;
+}
+
+/* Remove blinking cursor from all elements but keep mouse pointer visible */
+*, *:before, *:after {
+    cursor: default !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+/* Prevent text selection and caret */
+h1, h2, h3, h4, h5, h6, p, span, div {
+    cursor: default !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    caret-color: transparent !important;
+}
+
+/* Remove text cursor specifically from inputs if you have any */
+input, textarea, [contenteditable] {
+    cursor: default !important;
+    caret-color: transparent !important;
+}
+
+/* Allow pointer cursor for clickable elements */
+a, button, [role="button"], .btn, .nav-link, .navbar-brand {
+    cursor: pointer !important;
+}
+
+/* Remove any blinking animations */
+* {
+    animation: none !important;
+    -webkit-animation: none !important;
+}
+.App {
+  text-align: center;
+  padding-top: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(244, 243, 243);
+  font-family: "Bona Nova SC", serif !important;
+  font-weight: 700 !important;
+  font-style: normal;
+  margin: 0 !important;
+  background-color: rgb(11, 21, 17);
+  position: relative;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.header-content {
+  text-align: center;
+  max-width: 90vw;
+  width: 100%;
+  transform: translateY(-2vw);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: rgb(11, 21, 17);
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.philosophy-content {
+  max-width: 800px;
+  text-align: center;
+  color: rgb(11, 21, 17);
+}
+
+.philosophy-content h3 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-family: "Bona Nova SC", serif !important;
+  color: rgb(11, 21, 17);
+}
+
+.philosophy-content p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-family: "Bona Nova", serif !important;
+  letter-spacing: 0.05rem;
+  color: rgb(11, 21, 17);
+}
+
+.philosophy-content p::before,
+.philosophy-content p::after,
+.philosophy-quote::before,
+.philosophy-quote::after {
+  color: #B8860B;
+}
+
+.philosophy-content p::first-letter,
+.philosophy-quote::first-letter {
+  color: rgb(11, 21, 17);
+}
+
+.philosophy-quote {
+  font-style: italic;
+  font-size: 1.6rem;
+  color: rgb(11, 21, 17);
+  margin: 2rem 0;
+  border-left: 3px solid rgb(11, 21, 17);
+  padding-left: 1.5rem;
+  font-weight: bold;
+  font-family: "Bona Nova", serif !important;
+}
+
+/* Responsive header typography */
+.header-title {
+  font-size: clamp(3rem, 8vw, 10rem);
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Bona Nova SC", serif !important;
+  line-height: 1.1;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.header-subtitle {
+  font-size: clamp(2rem, 6vw, 7rem);
+  margin: clamp(0.5rem, 2vw, 1rem) 0 clamp(1rem, 3vw, 3rem) 0 !important;
+  padding: 0 !important;
+  font-family: "Bona Nova SC", serif !important;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.header-tagline {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  letter-spacing: clamp(0.1rem, 0.5vw, 0.5rem);
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Bona Nova SC", serif !important;
+  line-height: 1.3;
+  max-width: 90%;
+  margin: 0 auto !important;
+} 
+.App-link {
+  color: #61dafb;
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 480px) {
+  .App-header {
+    padding: 1rem 0.5rem;
+  }
+  
+  .header-content {
+    transform: translateY(-1vw);
+  }
+  
+  .header-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+  
+  .header-subtitle {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+  
+  .header-tagline {
+    font-size: clamp(0.9rem, 4vw, 1.4rem);
+    letter-spacing: clamp(0.05rem, 0.3vw, 0.3rem);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .header-title {
+    font-size: clamp(4rem, 10vw, 6rem);
+  }
+  
+  .header-subtitle {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+  }
+  
+  .header-tagline {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    letter-spacing: clamp(0.2rem, 0.4vw, 0.4rem);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-title {
+    font-size: clamp(6rem, 8vw, 8rem);
+  }
+  
+  .header-subtitle {
+    font-size: clamp(4.5rem, 6vw, 6rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  .header-content {
+    transform: translateY(-1.5vw);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar color changes when over white background */
+.navbar-on-white {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-on-white .navbar-brand,
+.navbar-on-white .nav-link {
+  color: #B8860B !important; /* Dark gold color */
+}
+
+.navbar-on-white .navbar-toggler {
+  border-color: #B8860B !important;
+}
+
+.navbar-on-white .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23B8860B' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Gold punctuation marks - most aggressive approach */
+.gold-punctuation {
+  color: #B8860B !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #B8860B !important;
+}
+
+/* More specific selectors to override any conflicts */
+.philosophy-quote .gold-punctuation,
+.philosophy-content .gold-punctuation,
+div .gold-punctuation,
+p .gold-punctuation,
+span.gold-punctuation {
+  color: #B8860B !important;
+  -webkit-text-fill-color: #B8860B !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+/* Coffee Trailer Section */
+.trailer-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(11, 21, 17); /* Dark green background */
+  color: rgb(244, 243, 243); /* Light text */
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.trailer-content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.trailer-content h3 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-family: "Bona Nova SC", serif !important;
+  color: rgb(244, 243, 243);
+}
+
+.trailer-image {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.trailer-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.trailer-description {
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trailer-description p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-family: "Bona Nova", serif !important;
+  color: rgb(244, 243, 243);
+  margin-bottom: 2rem;
+  text-align: center;
+}
