@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [isNavbarOnWhite, setIsNavbarOnWhite] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +54,8 @@ function App() {
         block: 'start'
       });
     }
+    // Collapse navbar on mobile after clicking a link
+    setExpanded(false);
   };
 
   // Function to wrap punctuation in gold spans
@@ -106,6 +109,8 @@ function App() {
         fixed="top" 
         style={{backgroundColor: 'transparent'}}
         className={`${isNavbarOnWhite ? 'navbar-on-white' : ''} ${isScrolled ? 'scrolled' : ''}`}
+        expanded={expanded}
+        onToggle={(expanded) => setExpanded(expanded)}
       >
         <Container>
           <Navbar.Brand href="#home" onClick={scrollToSection('App-header')}>{wrapPunctuation("The Philosopher")}</Navbar.Brand>
