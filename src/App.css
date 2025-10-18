@@ -141,6 +141,152 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   font-family: "Bona Nova", serif !important;
 }
 
+/* Coffee Section */
+.coffee-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(23, 43, 36); /* Dark green background */
+  color: rgb(244, 243, 243); /* Light text */
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.coffee-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.coffee-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.coffee-text h3 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-family: "Bona Nova SC", serif !important;
+  color: rgb(244, 243, 243);
+}
+
+.coffee-text p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-family: "Bona Nova", serif !important;
+  color: rgb(244, 243, 243);
+}
+
+.coffee-image-container {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coffee-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive layout for coffee section */
+@media (max-width: 1024px) {
+  .coffee-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .coffee-text {
+    order: 2;
+  }
+  
+  .coffee-image-container {
+    order: 1;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coffee-text h3 {
+    font-size: 3rem;
+  }
+  
+  .coffee-text p {
+    font-size: 1.2rem;
+  }
+  
+  .coffee-image-container {
+    max-width: 100%;
+  }
+}
+
+/* About Section */
+.about-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* White background */
+  color: rgb(23, 43, 36); /* Dark green text */
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.about-content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.about-content h3 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-family: "Bona Nova SC", serif !important;
+  color: rgb(23, 43, 36);
+}
+
+.about-image {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-description {
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-description p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-family: "Bona Nova", serif !important;
+  color: rgb(23, 43, 36);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 /* Responsive header typography */
 .header-title {
   font-size: clamp(3rem, 8vw, 10rem);
@@ -305,60 +451,4 @@ span.gold-punctuation {
   background: none !important;
   -webkit-background-clip: initial !important;
   background-clip: initial !important;
-}
-
-/* Coffee Trailer Section */
-.trailer-section {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(23, 43, 36); /* Dark green background */
-  color: rgb(244, 243, 243); /* Light text */
-  padding: 4rem 2rem;
-  position: relative;
-}
-
-.trailer-content {
-  max-width: 1000px;
-  text-align: center;
-}
-
-.trailer-content h3 {
-  font-size: 4rem;
-  margin-bottom: 3rem;
-  font-family: "Bona Nova SC", serif !important;
-  color: rgb(244, 243, 243);
-}
-
-.trailer-image {
-  max-width: 100%;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.trailer-image img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.trailer-description {
-  margin-top: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.trailer-description p {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  font-family: "Bona Nova", serif !important;
-  color: rgb(244, 243, 243);
-  margin-bottom: 2rem;
-  text-align: center;
 }

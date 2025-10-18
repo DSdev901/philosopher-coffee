@@ -9,7 +9,8 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const philosophySection = document.querySelector('.philosophy-section');
-      const trailerSection = document.querySelector('.trailer-section');
+      const coffeeSection = document.querySelector('.coffee-section');
+      const aboutSection = document.querySelector('.about-section');
       const headerTitle = document.querySelector('.header-title');
       
       const scrollPosition = window.scrollY;
@@ -22,16 +23,18 @@ function App() {
         setIsScrolled(titleTop <= navbarHeight);
       }
       
-      if (philosophySection && trailerSection) {
-        const philosophyTop = philosophySection.offsetTop - 80; // Buffer for smooth transition
-        const philosophyBottom = trailerSection.offsetTop - 50; // Stop before trailer starts
+      if (philosophySection && coffeeSection && aboutSection) {
+        const philosophyTop = philosophySection.offsetTop - 80;
+        const coffeeTop = coffeeSection.offsetTop - 80;
+        const aboutTop = aboutSection.offsetTop - 80;
         
-        // Gold text ONLY when over white philosophy section
-        // Default white text when over green sections (header & mobile philosophy trailer)
-        if (scrollPosition >= philosophyTop && scrollPosition < philosophyBottom) {
-          setIsNavbarOnWhite(true); // Gold text for white background
+        // Green text when over white sections (philosophy and about)
+        // White text when over green sections (header and coffee)
+        if ((scrollPosition >= philosophyTop && scrollPosition < coffeeTop) || 
+            (scrollPosition >= aboutTop)) {
+          setIsNavbarOnWhite(true); // Green text for white backgrounds
         } else {
-          setIsNavbarOnWhite(false); // Default white text for green backgrounds
+          setIsNavbarOnWhite(false); // White text for green backgrounds
         }
       }
     };
@@ -41,11 +44,11 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToPhilosophy = (e) => {
+  const scrollToSection = (sectionClass) => (e) => {
     e.preventDefault();
-    const philosophySection = document.querySelector('.philosophy-section');
-    if (philosophySection) {
-      philosophySection.scrollIntoView({ 
+    const section = document.querySelector(`.${sectionClass}`);
+    if (section) {
+      section.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
@@ -109,10 +112,10 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href="#coffee">Coffee</Nav.Link>
-              <Nav.Link href="#philosophy" onClick={scrollToPhilosophy}>Philosophy</Nav.Link>
+              <Nav.Link href="#home" onClick={scrollToSection('App-header')}>Home</Nav.Link>
+              <Nav.Link href="#philosophy" onClick={scrollToSection('philosophy-section')}>Philosophy</Nav.Link>
+              <Nav.Link href="#coffee" onClick={scrollToSection('coffee-section')}>Coffee</Nav.Link>
+              <Nav.Link href="#about" onClick={scrollToSection('about-section')}>About</Nav.Link>
               <Nav.Link href="#contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -147,14 +150,35 @@ function App() {
         </div>
       </section>
 
-      {/* Coffee Trailer Section */}
-      <section className="trailer-section">
-        <div className="trailer-content">
+      {/* Coffee Section */}
+      <section className="coffee-section">
+        <div className="coffee-content">
+          <div className="coffee-image-container">
+            <img src={`${process.env.PUBLIC_URL}/coffee_photo.png`} alt="The Philosopher Coffee" />
+          </div>
+          <div className="coffee-text">
+            <h3>{wrapPunctuation("The Essence of Excellence")}</h3>
+            <p>
+              {wrapPunctuation("Every great idea begins with a premise. Ours is simple: exceptional coffee requires unwavering commitment to quality at every stage of existence.")}
+            </p>
+            <p>
+              {wrapPunctuation("We source only the finest beans, selected through a process of dialectical examination—questioning origin, roast, and character until only truth remains. Our espresso drinks are crafted with the precision of logical proof, each shot pulled to empirical perfection.")}
+            </p>
+            <p>
+              {wrapPunctuation("From single-origin pour-overs that reveal the a priori nature of terroir, to our signature espresso blends that synthesize complexity and balance, every cup embodies our categorical imperative: quality without compromise.")}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="about-section">
+        <div className="about-content">
           <h3>{wrapPunctuation("About")}</h3>
-          <div className="trailer-image">
+          <div className="about-image">
             <img src={`${process.env.PUBLIC_URL}/trailer_1.png`} alt="The Philosopher Coffee Trailer" />
           </div>
-          <div className="trailer-description">
+          <div className="about-description">
             <p>{wrapPunctuation("Our custom 2-horse trailer conversion brings philosophical coffee experiences directly to you.")}</p>
             <p>{wrapPunctuation("From farmer's markets to corporate events, we deliver thoughtfully crafted beverages wherever contemplation calls.")}</p>
           </div>
