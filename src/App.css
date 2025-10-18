@@ -240,21 +240,33 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 }
 
 /* Navbar color changes when over white background */
-.navbar-on-white {
+.navbar {
+  background-color: rgb(11, 21, 17) !important; /* Default dark green background */
+  border-bottom: 1px solid transparent; /* No border by default (in header) */
   transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  border-bottom: 1px solid rgb(244, 243, 243); /* Light border when scrolled */
+}
+
+.navbar-on-white {
+  background-color: white !important; /* White background when over white section */
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid rgb(11, 21, 17); /* Green border for white background */
 }
 
 .navbar-on-white .navbar-brand,
 .navbar-on-white .nav-link {
-  color: #B8860B !important; /* Dark gold color */
+  color: rgb(11, 21, 17) !important; /* Dark green color */
 }
 
 .navbar-on-white .navbar-toggler {
-  border-color: #B8860B !important;
+  border-color: rgb(11, 21, 17) !important;
 }
 
 .navbar-on-white .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23B8860B' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(11, 21, 17)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* Gold punctuation marks - most aggressive approach */

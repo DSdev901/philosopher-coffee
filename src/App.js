@@ -4,14 +4,24 @@ import './App.css';
 
 function App() {
   const [isNavbarOnWhite, setIsNavbarOnWhite] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const philosophySection = document.querySelector('.philosophy-section');
       const trailerSection = document.querySelector('.trailer-section');
+      const headerTitle = document.querySelector('.header-title');
+      
+      const scrollPosition = window.scrollY;
+      
+      // Check if navbar has reached the h1 element
+      if (headerTitle) {
+        const titleTop = headerTitle.offsetTop;
+        const navbarHeight = 80; // Approximate navbar height
+        setIsScrolled(scrollPosition + navbarHeight >= titleTop);
+      }
       
       if (philosophySection && trailerSection) {
-        const scrollPosition = window.scrollY;
         const philosophyTop = philosophySection.offsetTop - 80; // Buffer for smooth transition
         const philosophyBottom = trailerSection.offsetTop - 50; // Stop before trailer starts
         
@@ -26,6 +36,7 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -90,7 +101,7 @@ function App() {
         expand="lg" 
         fixed="top" 
         style={{backgroundColor: 'transparent'}}
-        className={isNavbarOnWhite ? 'navbar-on-white' : ''}
+        className={`${isNavbarOnWhite ? 'navbar-on-white' : ''} ${isScrolled ? 'scrolled' : ''}`}
       >
         <Container>
           <Navbar.Brand href="#home">{wrapPunctuation("The Philosopher")}</Navbar.Brand>
