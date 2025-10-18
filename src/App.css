@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(23, 43, 36)  !important;
+    background-color: rgb(24, 69, 59)  !important;
     scroll-behavior: smooth;
     cursor: default !important;
 }
@@ -69,7 +69,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   font-weight: 700 !important;
   font-style: normal;
   margin: 0 !important;
-  background-color: rgb(23, 43, 36);
+  background-color: rgb(24, 69, 59);
   position: relative;
   padding: 2rem 1rem;
   overflow: hidden;
@@ -91,7 +91,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   align-items: center;
   justify-content: center;
   background-color: white;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
   padding: 4rem 2rem;
   position: relative;
 }
@@ -99,14 +99,14 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 .philosophy-content {
   max-width: 800px;
   text-align: center;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
 }
 
 .philosophy-content h3 {
   font-size: 4rem;
   margin-bottom: 2rem;
   font-family: "Bona Nova SC", serif !important;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
 }
 
 .philosophy-content p {
@@ -115,7 +115,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   margin-bottom: 1.5rem;
   font-family: "Bona Nova", serif !important;
   letter-spacing: 0.05rem;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
 }
 
 .philosophy-content p::before,
@@ -127,15 +127,15 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 
 .philosophy-content p::first-letter,
 .philosophy-quote::first-letter {
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
 }
 
 .philosophy-quote {
   font-style: italic;
   font-size: 1.6rem;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
   margin: 2rem 0;
-  border-left: 3px solid rgb(23, 43, 36);
+  border-left: 3px solid rgb(24, 69, 59);
   padding-left: 1.5rem;
   font-weight: bold;
   font-family: "Bona Nova", serif !important;
@@ -149,7 +149,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(23, 43, 36); /* Dark green background */
+  background-color: rgb(24, 69, 59); /* Dark green background */
   color: rgb(244, 243, 243); /* Light text */
   padding: 4rem 2rem;
   position: relative;
@@ -240,7 +240,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   align-items: center;
   justify-content: center;
   background-color: white; /* White background */
-  color: rgb(23, 43, 36); /* Dark green text */
+  color: rgb(24, 69, 59); /* Dark green text */
   padding: 4rem 2rem;
   position: relative;
 }
@@ -254,7 +254,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   font-size: 4rem;
   margin-bottom: 3rem;
   font-family: "Bona Nova SC", serif !important;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
 }
 
 .about-image {
@@ -282,7 +282,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   font-size: 1.4rem;
   line-height: 1.8;
   font-family: "Bona Nova", serif !important;
-  color: rgb(23, 43, 36);
+  color: rgb(24, 69, 59);
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -387,7 +387,7 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 
 /* Navbar color changes when over white background */
 .navbar {
-  background-color: rgb(23, 43, 36) !important; /* Default dark green background */
+  background-color: rgb(24, 69, 59) !important; /* Default dark green background */
   border-bottom: none; /* No border on desktop */
   transition: all 0.3s ease-in-out;
 }
@@ -400,15 +400,15 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 
 .navbar-on-white .navbar-brand,
 .navbar-on-white .nav-link {
-  color: rgb(23, 43, 36) !important; /* Dark green color */
+  color: rgb(24, 69, 59) !important; /* Dark green color */
 }
 
 .navbar-on-white .navbar-toggler {
-  border-color: rgb(23, 43, 36) !important;
+  border-color: rgb(24, 69, 59) !important;
 }
 
 .navbar-on-white .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(23, 43, 36)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(24, 69, 59)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* Tablet and mobile: Remove border from navbar */
