@@ -14,11 +14,12 @@ function App() {
       
       const scrollPosition = window.scrollY;
       
-      // Check if navbar has reached the h1 element
+      // Check if navbar has touched/overlapped with the h1 element
       if (headerTitle) {
-        const titleTop = headerTitle.offsetTop;
-        const navbarHeight = 80; // Approximate navbar height
-        setIsScrolled(scrollPosition + navbarHeight >= titleTop);
+        const titleTop = headerTitle.getBoundingClientRect().top;
+        const navbarHeight = 70; // Approximate navbar height
+        // Show border when the bottom of navbar reaches the top of h1
+        setIsScrolled(titleTop <= navbarHeight);
       }
       
       if (philosophySection && trailerSection) {
@@ -123,7 +124,7 @@ function App() {
         <div className="header-content">
           <h1 className="header-title">{wrapPunctuation("The Philosopher")}</h1>
           <h2 className="header-subtitle">{wrapPunctuation("Coffee")}</h2>
-          <h4 className="header-tagline">{wrapPunctuation("We think therefore we brew.")}</h4>
+          <h4 className="header-tagline">{wrapPunctuation("I drink therefore I am... awake.")}</h4>
         </div>
       </header>
 
