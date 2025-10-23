@@ -244,7 +244,7 @@ function App() {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
-              <a href="https://www.instagram.com/thephilosopherscoffee" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/thephilosophercoffee" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
             </div>
