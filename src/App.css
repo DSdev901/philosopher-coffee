@@ -474,20 +474,6 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   }
 }
 
-/* Hover styles for all links - gold color on all devices */
-.navbar-brand:hover,
-.nav-link:hover,
-.nav-link:not(.active):hover {
-  color: #B8860B !important;
-  transition: color 0.3s ease;
-}
-
-.navbar-on-white .navbar-brand:hover,
-.navbar-on-white .nav-link:hover,
-.navbar-on-white .nav-link:not(.active):hover {
-  color: #B8860B !important;
-}
-
 /* Navbar brand focus state - return to default colors */
 .navbar-brand:focus {
   color: rgba(255, 255, 255, 0.9) !important;
@@ -546,6 +532,20 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 .navbar-on-white .nav-link:focus:not(.active),
 .navbar-on-white .navbar-nav .nav-link:focus:not(.active) {
   color: rgb(23, 43, 36) !important;
+}
+
+/* Hover styles for all links - gold color on all devices (must come AFTER other link styles) */
+.navbar-brand:hover,
+.nav-link:hover,
+.nav-link:not(.active):hover {
+  color: #B8860B !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-on-white .navbar-brand:hover,
+.navbar-on-white .nav-link:hover,
+.navbar-on-white .nav-link:not(.active):hover {
+  color: #B8860B !important;
 }
 
 /* Active link should stay gold even when focused */
