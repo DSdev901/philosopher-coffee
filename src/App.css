@@ -501,21 +501,6 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   color: rgb(23, 43, 36) !important;
 }
 
-/* On touch devices, prevent gold on navbar brand tap/active/focus */
-@media (hover: none) and (pointer: coarse) {
-  .navbar-brand:hover,
-  .navbar-brand:active,
-  .navbar-brand:focus {
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-  
-  .navbar-on-white .navbar-brand:hover,
-  .navbar-on-white .navbar-brand:active,
-  .navbar-on-white .navbar-brand:focus {
-    color: rgb(23, 43, 36) !important;
-  }
-}
-
 /* Active link styles - gold color (for current section) */
 .nav-link.active {
   color: #B8860B !important;
@@ -786,5 +771,21 @@ span.gold-punctuation {
     text-align: right;
     font-size: 0.85rem;
     margin: 0.15rem 0;
+  }
+}
+
+/* IMPORTANT: Touch device overrides - MUST be last to override hover styles */
+/* On touch devices (iPhone, iPad, Android), prevent gold color on navbar brand */
+@media (hover: none) and (pointer: coarse) {
+  .navbar-brand:hover,
+  .navbar-brand:active,
+  .navbar-brand:focus {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  .navbar-on-white .navbar-brand:hover,
+  .navbar-on-white .navbar-brand:active,
+  .navbar-on-white .navbar-brand:focus {
+    color: rgb(23, 43, 36) !important;
   }
 }
