@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './App.css';
 
 function App() {
   const [isNavbarOnWhite, setIsNavbarOnWhite] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +18,7 @@ function App() {
       const headerTitle = document.querySelector('.header-title');
       
       const scrollPosition = window.scrollY;
+      const offset = 80; // Same offset used for navbar color change
       
       // Check if navbar has touched/overlapped with the h1 element
       if (headerTitle) {
@@ -25,17 +29,24 @@ function App() {
       }
       
       if (philosophySection && coffeeSection && aboutSection) {
-        const philosophyTop = philosophySection.offsetTop - 80;
-        const coffeeTop = coffeeSection.offsetTop - 80;
-        const aboutTop = aboutSection.offsetTop - 80;
+        const philosophyTop = philosophySection.offsetTop - offset;
+        const coffeeTop = coffeeSection.offsetTop - offset;
+        const aboutTop = aboutSection.offsetTop - offset;
         
-        // Green text when over white sections (philosophy and about)
-        // White text when over green sections (header and coffee)
-        if ((scrollPosition >= philosophyTop && scrollPosition < coffeeTop) || 
-            (scrollPosition >= aboutTop)) {
-          setIsNavbarOnWhite(true); // Green text for white backgrounds
+        // Determine active section and navbar color based on same trigger point
+        // Use the same logic for both active section and navbar color
+        if (scrollPosition >= aboutTop) {
+          setActiveSection('about');
+          setIsNavbarOnWhite(true); // White background (about section)
+        } else if (scrollPosition >= coffeeTop) {
+          setActiveSection('coffee');
+          setIsNavbarOnWhite(false); // Green background (coffee section)
+        } else if (scrollPosition >= philosophyTop) {
+          setActiveSection('philosophy');
+          setIsNavbarOnWhite(true); // White background (philosophy section)
         } else {
-          setIsNavbarOnWhite(false); // White text for green backgrounds
+          setActiveSection('home');
+          setIsNavbarOnWhite(false); // Green background (header section)
         }
       }
     };
@@ -47,13 +58,28 @@ function App() {
 
   const scrollToSection = (sectionClass) => (e) => {
     e.preventDefault();
+    
+    const clickedElement = e.currentTarget;
     const section = document.querySelector(`.${sectionClass}`);
+    
     if (section) {
+      // Add a class to keep the gold color during scroll
+      clickedElement.classList.add('scrolling');
+      
+      // Scroll to the section
       section.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
+      
+      // Remove the scrolling class after scroll animation completes (typically ~500-1000ms)
+      setTimeout(() => {
+        clickedElement.classList.remove('scrolling');
+        // Also blur to remove focus state
+        clickedElement.blur();
+      }, 1000); // Adjust timing if needed
     }
+    
     // Collapse navbar on mobile after clicking a link
     setExpanded(false);
   };
@@ -117,10 +143,38 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home" onClick={scrollToSection('App-header')}>Home</Nav.Link>
-              <Nav.Link href="#philosophy" onClick={scrollToSection('philosophy-section')}>Philosophy</Nav.Link>
-              <Nav.Link href="#coffee" onClick={scrollToSection('coffee-section')}>Coffee</Nav.Link>
-              <Nav.Link href="#about" onClick={scrollToSection('about-section')}>About</Nav.Link>
+              <Nav.Link 
+                href="#home" 
+                onClick={scrollToSection('App-header')}
+                className={activeSection === 'home' ? 'active' : ''}
+                active={false}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link 
+                href="#philosophy" 
+                onClick={scrollToSection('philosophy-section')}
+                className={activeSection === 'philosophy' ? 'active' : ''}
+                active={false}
+              >
+                Philosophy
+              </Nav.Link>
+              <Nav.Link 
+                href="#coffee" 
+                onClick={scrollToSection('coffee-section')}
+                className={activeSection === 'coffee' ? 'active' : ''}
+                active={false}
+              >
+                Coffee
+              </Nav.Link>
+              <Nav.Link 
+                href="#about" 
+                onClick={scrollToSection('about-section')}
+                className={activeSection === 'about' ? 'active' : ''}
+                active={false}
+              >
+                About
+              </Nav.Link>
               {/* <Nav.Link href="#contact">Contact</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
@@ -189,6 +243,29 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <img src={`${process.env.PUBLIC_URL}/logo_flat.png`} alt="The Philosopher Coffee Logo" />
+          </div>
+          <div className="footer-center">
+            <div className="footer-social">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </div>
+            <div className="footer-info">
+              <p>&copy; {new Date().getFullYear()} The Philosopher Coffee</p>
+              <p>Memphis, TN</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
