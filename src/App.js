@@ -59,7 +59,6 @@ function App() {
   const scrollToSection = (sectionClass) => (e) => {
     e.preventDefault();
     
-    const clickedElement = e.currentTarget;
     const section = document.querySelector(`.${sectionClass}`);
     
     if (section) {
@@ -68,12 +67,6 @@ function App() {
         behavior: 'smooth',
         block: 'start'
       });
-      
-      // On mobile/touch devices, immediately remove focus to return to original color
-      // This happens as soon as scrolling starts
-      setTimeout(() => {
-        clickedElement.blur();
-      }, 50); // Small delay to ensure click is registered
     }
     
     // Collapse navbar on mobile after clicking a link
