@@ -58,28 +58,13 @@ function App() {
 
   const scrollToSection = (sectionClass) => (e) => {
     e.preventDefault();
-    
-    const clickedElement = e.currentTarget;
     const section = document.querySelector(`.${sectionClass}`);
-    
     if (section) {
-      // Add a class to keep the gold color during scroll
-      clickedElement.classList.add('scrolling');
-      
-      // Scroll to the section
       section.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
-      
-      // Remove the scrolling class after scroll animation completes (typically ~500-1000ms)
-      setTimeout(() => {
-        clickedElement.classList.remove('scrolling');
-        // Also blur to remove focus state
-        clickedElement.blur();
-      }, 1000); // Adjust timing if needed
     }
-    
     // Collapse navbar on mobile after clicking a link
     setExpanded(false);
   };

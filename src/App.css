@@ -540,19 +540,6 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   }
 }
 
-/* Scrolling state - show gold color during smooth scroll animation */
-.navbar-brand.scrolling,
-.navbar-brand.scrolling:focus,
-.navbar-brand.scrolling:active {
-  color: #B8860B !important;
-}
-
-.navbar-on-white .navbar-brand.scrolling,
-.navbar-on-white .navbar-brand.scrolling:focus,
-.navbar-on-white .navbar-brand.scrolling:active {
-  color: #B8860B !important;
-}
-
 /* Active link styles - gold color (for current section) */
 .nav-link.active {
   color: #B8860B !important;
