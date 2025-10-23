@@ -474,26 +474,16 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
   }
 }
 
-/* Hover styles for all links - gold color (only on devices with hover capability) */
-@media (hover: hover) and (pointer: fine) {
-  .navbar-brand:hover,
-  .nav-link:hover {
-    color: #B8860B !important;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-on-white .navbar-brand:hover,
-  .navbar-on-white .nav-link:hover {
-    color: #B8860B !important;
-  }
+/* Hover styles for all links - gold color on all devices */
+.navbar-brand:hover,
+.nav-link:hover {
+  color: #B8860B !important;
+  transition: color 0.3s ease;
 }
 
-/* On touch devices, prevent hover effects */
-@media (hover: none) {
-  .navbar-brand:hover,
-  .nav-link:hover {
-    color: inherit;
-  }
+.navbar-on-white .navbar-brand:hover,
+.navbar-on-white .nav-link:hover {
+  color: #B8860B !important;
 }
 
 /* Navbar brand focus state - return to default colors */
@@ -521,23 +511,6 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 
 .navbar-on-white .navbar-brand:active {
   color: rgb(23, 43, 36) !important;
-}
-
-/* On touch devices, override all states to prevent gold color */
-@media (hover: none) {
-  .navbar-brand,
-  .navbar-brand:hover,
-  .navbar-brand:focus,
-  .navbar-brand:active {
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-  
-  .navbar-on-white .navbar-brand,
-  .navbar-on-white .navbar-brand:hover,
-  .navbar-on-white .navbar-brand:focus,
-  .navbar-on-white .navbar-brand:active {
-    color: rgb(23, 43, 36) !important;
-  }
 }
 
 /* Active link styles - gold color (for current section) */
