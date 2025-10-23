@@ -476,13 +476,15 @@ a, button, [role="button"], .btn, .nav-link, .navbar-brand {
 
 /* Hover styles for all links - gold color on all devices */
 .navbar-brand:hover,
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:not(.active):hover {
   color: #B8860B !important;
   transition: color 0.3s ease;
 }
 
 .navbar-on-white .navbar-brand:hover,
-.navbar-on-white .nav-link:hover {
+.navbar-on-white .nav-link:hover,
+.navbar-on-white .nav-link:not(.active):hover {
   color: #B8860B !important;
 }
 
